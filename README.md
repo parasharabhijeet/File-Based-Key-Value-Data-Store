@@ -12,3 +12,8 @@ The data store will support the following :
 6. Every key supports setting a Time-To-Live property when it is created. This property is optional. If provided, it will be evaluated as an integer defining the number of seconds the key must be retained in the data store. Once the Time-To-Live for a key has expired, the key will no longer be available for Read or Delete operations.
 7. Appropriate error responses must always be returned to a client if it uses the data store in unexpected ways or breaches any limits
 8. The file size never exceeds 1GB
+
+To run the program, use the command below and follow the instructions accordingly.
+```bash
+python client.py
+```
