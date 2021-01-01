@@ -23,7 +23,7 @@ class DataStore:
 
     def create(self, key, value, timeout=0):
         if key in self.d:
-            print("[!] Error: this key already exists\n")  # error message1
+            print("[!] Error: this key already exists\n")  
         else:
             if key.isalpha():
                 if len(self.d) < (1024 * 1020 * 1024) and len(str(value)) <= (
@@ -41,17 +41,17 @@ class DataStore:
                             json.dump(self.d, file)
                         print("[+] Key Successfully Added")
                 else:
-                    print("[!]Error: Memory limit exceeded!!")  # error message2
+                    print("[!]Error: Memory limit exceeded!!")  
             else:
                 print(
                     "[-] Error: Invalid key_name!! key_name must contain only alphabets and no special characters or numbers"
-                )  # error message3
+                )  
 
     def read(self, key):
         if key not in self.d:
             print(
                 "[-] Error: given key does not exist in database. Please enter a valid key"
-            )  # error message4
+            ) 
         else:
             b = self.d[key]
             if b[1] != 0:
@@ -63,7 +63,7 @@ class DataStore:
                 else:
                     print(
                         "[-] Error: time-to-live of", key, "has expired"
-                    )  # error message5
+                    )  
             else:
                 stri = str(key) + " : " + str(b[0])
                 print(stri)
@@ -72,7 +72,7 @@ class DataStore:
         if key not in self.d:
             print(
                 "[-] Error: given key does not exist in database. Please enter a valid key"
-            )  # error message4
+            )  
         else:
             b = self.d[key]
             if b[1] != 0:
@@ -82,7 +82,7 @@ class DataStore:
                 else:
                     print(
                         "[-] Error: time-to-live of", key, "has expired"
-                    )  # error message5
+                    ) 
             else:
                 del self.d[key]
                 with open("my_json.json","w") as file:
