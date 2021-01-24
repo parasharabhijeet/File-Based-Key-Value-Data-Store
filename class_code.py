@@ -28,7 +28,7 @@ class DataStore:
             if key.isalpha():
                 if len(self.d) < (1024 * 1020 * 1024) and len(str(value)) <= (
                     16 * 1024 * 1024
-                ):  # constraints for file size less than 1GB and Jasonobject value less than 16KB
+                ):  # constraints for file size less than 1GB and Json object value less than 16KB
                     if timeout == 0:
                         l = [value, timeout]
                     else:
@@ -58,7 +58,7 @@ class DataStore:
                 if time.time() < b[1]:  # comparing the present time with expiry time
                     stri = (
                         str(key) + ":" + str(b[0])
-                    )  # to return the value in the format of JasonObject i.e.,"key_name:value"
+                    )  # to return the value in the format of Json Object i.e.,"key_name:value"
                     return stri
                 else:
                     print(
